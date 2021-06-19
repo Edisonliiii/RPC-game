@@ -4,6 +4,14 @@ Two files corresponding to two different assessments.
 
 ## Usage
 
+Highly recommand using docker and mapping the repo to the container.
+You can use gcc's official docker image
+
+```bash
+docker pull gcc
+```
+Then mount the repo to the container and run as following instructions.
+
 Both projects are implemented using CMake. 
 
 ```bash
