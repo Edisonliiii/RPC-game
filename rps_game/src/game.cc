@@ -2,6 +2,22 @@
 
 #include "game.h"
 
+Game::Game()
+{
+  _computer = new Computer();
+  _human = new Human();
+  _observers.push_back(_computer);
+  _observers.push_back(_human);
+}
+
+Game::~Game()
+{
+  delete _computer;
+  _computer = nullptr;
+  delete _human;
+  _human = nullptr;
+}
+
 void Game::Welcome()
 {
   std::cout<<"Welcome to the RPS game!"<<std::endl;
@@ -17,19 +33,19 @@ void Game::MakeBet()
   const char* user_input = new char[10];
   user_input = tmp.data();
   // make bet
-  _computer.PickChoice();
-  _human.PickChoice(user_input);
+  _computer->PickChoice();
+  _human->PickChoice(user_input);
 }
 
 void Game::GameReferee()
 {
-  char const* computer_curr_bet = _computer.GetChoice();
-  char const* human_curr_bet = _human.GetChoice();
+  char const* computer_curr_bet = _computer->GetChoice();
+  char const* human_curr_bet = _human->GetChoice();
   
   // print result
   std::cout<<"Computer: "<<computer_curr_bet<<std::endl;
   std::cout<<"You: "<<human_curr_bet<<std::endl;
-  std::cout<<strlen(_computer.GetChoice())<<std::endl;
+  std::cout<<strlen(_computer->GetChoice())<<std::endl;
   std::cout << "Here is the result: ";
   if (strlen(computer_curr_bet) == strlen(human_curr_bet))
   {
@@ -45,6 +61,14 @@ void Game::GameReferee()
   }
 }
 
+void Game::NoticeObservers()
+{
+  for (int i=0; i<_observers.size(); ++i)
+  {
+    std::cout<<"Notice: "<<((Player*)(_observers[i]))->GetChoice()<<std::endl;
+  }
+}
+
 void Game::RunGame()
 {
   this->Welcome();
@@ -55,6 +79,7 @@ void Game::RunGame()
     std::cout<<"Round: "<<++round<<std::endl;
     this->MakeBet();
     this->GameReferee();
+    this->NoticeObservers();
   }
 }
 

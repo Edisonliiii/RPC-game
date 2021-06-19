@@ -6,16 +6,24 @@
 #include "computer.h"
 #include "human.h"
 
+// acting like an obsrevee
 class Game
 {
 private:
-  Computer _computer;
-  Human _human;
+  Computer* _computer;
+  Human* _human;
+  
+  // observers
+  std::vector<Player*> _observers;
 
   void Welcome();
   void MakeBet();
   void GameReferee();
+
+  void NoticeObservers();
 public:
+  Game();
+  ~Game();
   void RunGame();
 };
 
