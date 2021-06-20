@@ -47,6 +47,8 @@ Computer will automatically change different strategies according to its wining 
 
 In this project, the game is abstrated as player, game information two parts. Game object will never resreve any game history but the current state. Game will reflect every round back to computer player and let it make its own decision. And I think such design is as close as to online client/server module.
 
+Additionally, players have the same interface. But computer player owns strategy interface so that it could leverage different strategies according to the change of the game. And apparently, strategy interface is extendable, implement your own algorithm by inheriting the interface.
+
 ## Claim
 Some of the design might look overkilled and not necessary, but this is an interview, I hope you can see more.
 
