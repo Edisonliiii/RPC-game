@@ -6,7 +6,7 @@
 class StrategyPureRandom : public Strategy
 {
 public:
-  char const* ComplyStrategy() override;
+  char const* ComplyStrategy(std::vector<std::vector<int>>& history) const override;
 };
 
 #endif // STRATEGY_PURE_RANDOM_H_

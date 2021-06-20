@@ -5,7 +5,7 @@
 
 const char* options[3] = {"Rock", "Paper", "Scissor"};
 
-char const* StrategyPureRandom::ComplyStrategy()
+char const* StrategyPureRandom::ComplyStrategy(std::vector<std::vector<int>>& history) const
 {
   srand(time(nullptr));
   int rand_index = 0 + ( rand() % ( 2 - 0 + 1 ));

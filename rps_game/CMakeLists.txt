@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(RpcGame)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCES
   # game components
@@ -10,6 +10,7 @@ set(SOURCES
   src/human.cc
   # strategies
   src/strategy_pure_random.cc
+  src/strategy_highest_win_rate.cc
   # entry
   src/game.cc
   src/main.cc

@@ -18,6 +18,7 @@ public:
   ~Human();
   void PickChoice(char const* choice) override;
   char const* GetChoice() override;
+  void GetGameInformation(int result=0, int c_bet=0, int h_bet=0) override {}
 };
 
 #endif // RPCGAME_HUMAN_H_
