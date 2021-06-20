@@ -32,8 +32,9 @@ Else, if you want to run the project, you can see the executable file under your
 
 ### Visitor
 
-Using visitor pattern plus Google test doing some simple unit tests
-Will feature type generatlization if I got time and patient
+Using visitor pattern plus Google test doing some simple unit tests.
+Will feature type generatlization if I got time and patient.
+But please know, I got relatively limited time cuz I am working whole week.
 
 ### RPS game
 
