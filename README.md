@@ -43,5 +43,9 @@ Using observer pattern to record the game history.
 
 Using strategy pattern to decouple strategy and data.
 
+Computer will automatically change different strategies according to its wining rate.
+
+In this project, the game is abstrated as player, game information two parts. Game object will never resreve any game history but the current state. Game will reflect every round back to computer player and let it make its own decision. And I think such design is as close as to online client/server module.
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

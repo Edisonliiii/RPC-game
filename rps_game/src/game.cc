@@ -25,7 +25,6 @@ Game::~Game()
 void Game::Welcome()
 {
   std::cout<<"Welcome to the RPS game!"<<std::endl;
-  
 }
 
 void Game::MakeBet()
@@ -53,14 +52,16 @@ void Game::GameReferee()
   // print result
   std::cout<<"Computer: "<<computer_curr_bet<<std::endl;
   std::cout<<"You: "<<human_curr_bet<<std::endl;
-  std::cout<<strlen(_computer->GetChoice())<<std::endl;
+  //std::cout<<strlen(_computer->GetChoice())<<std::endl;
   std::cout << "Here is the result: ";
   if (strlen(computer_curr_bet) == strlen(human_curr_bet))
   {
     std::cout << "Draw!" << std::endl;
     this->_result = DRAW;
   }
-  else if (strlen(computer_curr_bet) - strlen(human_curr_bet)==1)
+  else if (strlen(computer_curr_bet) - strlen(human_curr_bet) == 1 ||
+           strlen(computer_curr_bet) - strlen(human_curr_bet) == 2 ||
+           strlen(computer_curr_bet) - strlen(human_curr_bet) == -3)
   {
     std::cout << "You Lost!" << std::endl;
     this->_result = C_WIN;

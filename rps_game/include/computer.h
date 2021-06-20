@@ -15,6 +15,8 @@
 class Computer : public Player
 {
 private:
+  // count total
+  int _round;
   // reserve current choice (Rpc: Rock/Paper/Scissor)
   std::unique_ptr<Rpc> _computer_choice;
   // factory obj which will return a new choice and assign to _computer_choice
