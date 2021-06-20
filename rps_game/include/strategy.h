@@ -1,7 +1,6 @@
 #ifndef STRATEGY_H_
 #define STRATEGY_H_
 // system dependency
-#include <optional>
 #include <vector>
 
 // Strategy interface

@@ -1,8 +1,8 @@
 #ifndef GAME_H_
 #define GAME_H_
-
+// system dependency
 #include <vector>
-
+// user-defined dependency
 #include "computer.h"
 #include "human.h"
 
@@ -14,6 +14,11 @@ class Game
 private:
   // players: computer & human user
   // ready to extend the #users
+  // these two pointer could not be saved 
+  // reason: as the instruction saied, this is a two
+  //         player game, to distinguish two types of
+  //         players, for the purpose of readability,
+  //         these pointer separated from _observer array
   Computer* _computer;
   Human* _human;
   

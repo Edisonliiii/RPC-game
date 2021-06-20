@@ -52,8 +52,10 @@ char const* Computer::ConfigStrategy(char const* strategy_choice)
 // r-0, p-1, s-2
 void Computer::GetGameInformation(int result, int c_bet, int h_bet)
 {
+  // update the game information on computer side
   ++this->_self_history[c_bet][result];
   ++this->_round;
+  // print the game history
   int won_rounds = 0;
   int lost_rounds = 0;
   for (int i=0; i<3; ++i)

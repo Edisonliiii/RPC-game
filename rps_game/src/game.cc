@@ -1,7 +1,12 @@
+// system dependency
 #include <string>
-
+// user-defined dependency
 #include "game.h"
 
+// to save the space, all of the string will be mapped to int
+// string could not be replaced for the purpose of human interaction
+// [TODO]: will further optimize the space using 3-bits to represent all
+//         3 cases
 #define H_WIN 0
 #define C_WIN 1
 #define DRAW  2
@@ -24,12 +29,12 @@ Game::~Game()
 
 void Game::Welcome()
 {
-  std::cout<<"Welcome to the RPS game!"<<std::endl;
+  std::cout << "Welcome to the RPS game!" << std::endl;
 }
 
 void Game::MakeBet()
 {
-  std::cout<<"Please type your bet: ";
+  std::cout << "Please type your bet: ";
   // get user input
   std::string tmp;
   std::getline(std::cin, tmp);
@@ -49,10 +54,13 @@ void Game::GameReferee()
   else if (strlen(computer_curr_bet) == 5) _computer_curr_bet = 1;
   else if (strlen(computer_curr_bet) == 7) _computer_curr_bet = 2;
   // print result
-  std::cout<<"Computer: "<<computer_curr_bet<<std::endl;
-  std::cout<<"You: "<<human_curr_bet<<std::endl;
+  std::cout << "Computer: " << computer_curr_bet << std::endl;
+  std::cout << "You: " << human_curr_bet << std::endl;
   //std::cout<<strlen(_computer->GetChoice())<<std::endl;
   std::cout << "Here is the result: ";
+  // if      - Draw
+  // else if - Human Lost
+  // else    - Human Win
   if (strlen(computer_curr_bet) == strlen(human_curr_bet))
   {
     std::cout << "Draw!" << std::endl;
@@ -87,7 +95,7 @@ void Game::RunGame()
   // start game
   while(1)
   {
-    std::cout<<"Round: "<<++this->_round<<std::endl;
+    std::cout << "Round: " << ++this->_round << std::endl;
     this->MakeBet();
     this->GameReferee();
     this->NoticeObservers();

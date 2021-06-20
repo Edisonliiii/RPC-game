@@ -1,8 +1,8 @@
 #ifndef RPCGAME_HUMAN_H_
 #define RPCGAME_HUMAN_H_
-
+// system dependency
 #include <iostream>
-
+// user-defined dependency
 #include "player.h"
 #include "choice.h"
 
