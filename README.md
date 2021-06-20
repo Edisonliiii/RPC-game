@@ -48,6 +48,8 @@ Computer will automatically change different strategies according to its wining 
 In this project, the game is abstrated as player, game information two parts. Game object will never resreve any game history but the current state. Game will reflect every round back to computer player and let it make its own decision. And I think such design is as close as to online client/server module.
 
 ## Claim
+Some of the design might look overkilled and not necessary, but this is an interview, I hope you can see more.
+
 The two projects did not utilize any other lib or scaffold except STL, CMake and Google Test, all comments are added by hand. And I never used any IDE to build the project even though I could.
 
 Another thing is, I think the n times setting is stupid, which is not realistic. I make the game can keep running and the result will be printed after every single round.
