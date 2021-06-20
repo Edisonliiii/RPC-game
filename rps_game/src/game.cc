@@ -44,11 +44,10 @@ void Game::GameReferee()
 {
   char const* computer_curr_bet = _computer->GetChoice();
   char const* human_curr_bet = _human->GetChoice();
-
+  // transfer string to number
   if (strlen(computer_curr_bet) == 4) _computer_curr_bet = 0;
   else if (strlen(computer_curr_bet) == 5) _computer_curr_bet = 1;
   else if (strlen(computer_curr_bet) == 7) _computer_curr_bet = 2;
-
   // print result
   std::cout<<"Computer: "<<computer_curr_bet<<std::endl;
   std::cout<<"You: "<<human_curr_bet<<std::endl;
@@ -71,13 +70,13 @@ void Game::GameReferee()
     std::cout << "You Win!" << std::endl;
     this->_result = H_WIN;
   }
+  std::cout<<std::endl;
 }
 
 void Game::NoticeObservers()
 {
   for (int i=0; i<_observers.size(); ++i)
   {
-    std::cout<<"Notice: "<<((Player*)(_observers[i]))->GetChoice()<<std::endl;
     ((Player*)(_observers[i]))->GetGameInformation(this->_result, this->_computer_curr_bet);
   }
 }

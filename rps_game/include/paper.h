@@ -1,8 +1,9 @@
 #ifndef PAPER_H_
 #define PAPER_H_
-
+// user-defined dependency
 #include "rpc_options.h"
 
+// paper class
 class Paper : public Rpc
 {
 public:
@@ -11,6 +12,7 @@ public:
   {
     return "Paper";
   }
+  // d'tor
   virtual ~Paper(){}
 };
 
