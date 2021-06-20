@@ -49,4 +49,12 @@ TEST_F(CircleTest, AreaVisitor)
   int radius = test_obj.GetRadius();
   EXPECT_EQ(3.14*radius*radius, test_obj.AreaVisitor(tmp));
 }
+
+// illegal area
+TEST_F(CircleTest, IllegalAreaAttempt)
+{
+  AreaVisitor* tmp = new AreaVisitor();
+  test_obj.SetRadius(-100);
+  EXPECT_EQ(0, test_obj.AreaVisitor(tmp));
+}
 } // namespace

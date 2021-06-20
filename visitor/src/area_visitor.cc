@@ -38,7 +38,7 @@ void printer(std::string type, int area, int property_number, ...)
 int AreaVisitor::CircleArea(Circle* circle_object) const
 {
   int radius = circle_object->GetRadius();
-  int area = PI*radius*radius;
+  int area = ( radius >= 0 ) ? PI*radius*radius : 0;
   printer("Circle", area, 1, radius);
   return area;
 }
@@ -47,7 +47,8 @@ int AreaVisitor::RectangleArea(Rectangle* rectangle_object) const
 {
   int length = rectangle_object->GetLength();
   int width = rectangle_object->GetWidth();
-  int area = length * width;
+  // return 0 if input is illegal
+  int area = ( length >=0 && width >=0 ) ? length * width : 0;
   printer("Rectangle", area, 2, length, width);
   return area;
 }
@@ -56,7 +57,8 @@ int AreaVisitor::TriangleArea(Triangle* triangle_object) const
 {
   int base = triangle_object->GetBase();
   int height = triangle_object->GetHeight();
-  int area = base * height / 2;
+  // return 0 if input is illegal
+  int area = ( base >=0 && height >=0 ) ? base * height / 2 : 0;
   printer("Triangle", area, 2, base, height);
   return area;
 }

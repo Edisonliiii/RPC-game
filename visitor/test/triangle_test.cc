@@ -66,4 +66,13 @@ TEST_F(TriangleTest, AreaVisitor)
   EXPECT_EQ(3*4/2, test_obj.AreaVisitor(tmp));
 }
 
+// illegal area
+TEST_F(TriangleTest, IllegalAreaAttempt)
+{
+  AreaVisitor* tmp = new AreaVisitor();
+  test_obj.SetBase(-1);
+  test_obj.SetHeight(-10);
+  EXPECT_EQ(0, test_obj.AreaVisitor(tmp));
+}
+
 } // namespace
