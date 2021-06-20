@@ -1,11 +1,12 @@
+// third-party dependency
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
-
+// user-defined dependency
 #include "circle.h"
 #include "area_visitor.h"
 
 namespace {
-
+// test fixture
 class CircleTest : public testing::Test
 {
 protected:
@@ -41,7 +42,7 @@ TEST_F(CircleTest, MoveAssignOperator)
   EXPECT_EQ(10, tmp.GetRadius());
   EXPECT_EQ(-1, test_obj.GetRadius());
 }
-
+// test area
 TEST_F(CircleTest, AreaVisitor)
 {
   AreaVisitor* tmp = new AreaVisitor();

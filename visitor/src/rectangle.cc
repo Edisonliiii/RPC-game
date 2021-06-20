@@ -5,6 +5,7 @@ Rectangle::Rectangle(Rectangle&& rectangle_object)
 {
   this->_length = rectangle_object.GetLength();
   this->_width = rectangle_object.GetWidth();
+  // rectangle_object will be reset to zero after move copy c'tor
   rectangle_object.SetLength(0);
   rectangle_object.SetWidth(0);
 }
@@ -14,6 +15,7 @@ Rectangle& Rectangle::operator=(Rectangle&& rectangle_object)
   if (this == &rectangle_object) return *this;
   this->_length = rectangle_object.GetLength();
   this->_width = rectangle_object.GetWidth();
+  // rectangle_object will be reset to zero after move assignment c'tor
   rectangle_object.SetLength(0);
   rectangle_object.SetWidth(0);
   return *this;

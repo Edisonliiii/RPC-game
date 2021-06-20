@@ -1,13 +1,22 @@
+// system dependency
+#include <stdarg.h>
+#include <iostream>
+// user-defined dependency
 #include "area_visitor.h"
 #include "circle.h"
 #include "rectangle.h"
 #include "triangle.h"
 
-#include <stdarg.h>
-#include <iostream>
-
+// use to calculate the area of circle
 const double PI = 3.14;
 
+// Utility funciton: use to print necessay information
+// [Parameter]: type(string): Circle / Rectangle / Triangle ...
+//              area(int): the area value of "type"
+//              property_number(int): # type's property
+//                                  eg: circle: only radius so property_number = 1
+//              ...: for circle: radius, for rectangle: length, width
+// [Return]: None
 void printer(std::string type, int area, int property_number, ...)
 {
   int val;
@@ -16,6 +25,7 @@ void printer(std::string type, int area, int property_number, ...)
 
   std::cout << "Type: " << type << std::endl;
   std::cout << "Data: ";
+  // iterate all properties of the current object
   for(int i=0; i<property_number; ++i)
   {
     val=va_arg(vl, int);

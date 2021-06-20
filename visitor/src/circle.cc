@@ -4,6 +4,7 @@
 Circle::Circle(Circle&& circle_object) noexcept
 {
   this->_radius = circle_object.GetRadius();
+  // circle_object will be reset to -1 after move copy c'tor
   circle_object.SetRadius(-1);
 }
 
@@ -11,6 +12,7 @@ Circle& Circle::operator=(Circle&& circle_object) noexcept
 {
   if(this == &circle_object) return *this;
   this->_radius = circle_object.GetRadius();
+  // circle_object will be reset to -1 after move assignment c'tor
   circle_object.SetRadius(-1);
   return *this;
 }

@@ -1,8 +1,8 @@
 #ifndef RPCGAME_COMPUTER_H_
 #define RPCGAME_COMPUTER_H_
-
+// system dependency
 #include <vector>
-
+// user-defined dependency
 #include "player.h"
 #include "choice.h"
 #include "strategy_pure_random.h"

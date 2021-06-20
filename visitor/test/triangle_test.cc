@@ -1,34 +1,39 @@
+// third-party dependency
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
-
+// user-defined dependency
 #include "triangle.h"
 #include "area_visitor.h"
 
 namespace {
-
+// test fixture
 class TriangleTest : public testing::Test
 {
 protected:
+  // test target
   Triangle test_obj = Triangle(3, 4);
 };
 
-// test SetBase
+// test GetBase
 TEST_F(TriangleTest, GetBase)
 {
   EXPECT_EQ(3, test_obj.GetBase());
 }
 
+// test GetHeight
 TEST_F(TriangleTest, GetHeight)
 {
   EXPECT_EQ(4, test_obj.GetHeight());
 }
 
+// test SetBase
 TEST_F(TriangleTest, SetBase)
 {
   test_obj.SetBase(10);
   EXPECT_EQ(10, test_obj.GetBase());
 }
 
+// test SetHeight
 TEST_F(TriangleTest, SetHeight)
 {
   test_obj.SetHeight(64);

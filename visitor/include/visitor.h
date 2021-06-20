@@ -1,10 +1,14 @@
 #ifndef VISITOR_VISITOR_H_
 #define VISITOR_VISITOR_H_
 
+// forwarding declaration
 class Circle;
 class Rectangle;
 class Triangle;
 
+// Visitor interface
+// Example:
+//    include "visitor.h" and implement it
 class Visitor
 {
 public:
