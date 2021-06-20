@@ -3,6 +3,7 @@
 
 #include "rpc_options.h"
 
+// Rock
 class Rock : public Rpc
 {
 public:
@@ -10,6 +11,7 @@ public:
   {
     return "Rock";
   }
+  // d'tor
   virtual ~Rock(){}
 };
 

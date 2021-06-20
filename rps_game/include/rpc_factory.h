@@ -4,6 +4,8 @@
 #include <memory>
 #include "rpc_options.h"
 
+// abstraction for factory
+// simply inherit it and implement it
 class RpcFactory
 {
 public:

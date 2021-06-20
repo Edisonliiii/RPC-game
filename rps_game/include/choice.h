@@ -11,8 +11,9 @@
 #include "paper.h"
 #include "scissor.h"
 
-// This is the factory hub
+// This is the factory hub, acting as factor public interface
 // It will produce any materials needed
+// to get different bets, you just need to include one Choice object
 class Choice
 {
 private:

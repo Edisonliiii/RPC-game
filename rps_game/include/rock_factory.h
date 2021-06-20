@@ -4,6 +4,7 @@
 #include "rock.h"
 #include "rpc_factory.h"
 
+// build rock and return unique pointer
 class RockFactory : public RpcFactory
 {
 public:

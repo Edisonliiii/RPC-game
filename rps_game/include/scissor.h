@@ -3,6 +3,7 @@
 
 #include "rpc_options.h"
 
+// scissor
 class Scissor : public Rpc
 {
 public:

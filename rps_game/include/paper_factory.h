@@ -4,6 +4,7 @@
 #include "paper.h"
 #include "rpc_factory.h"
 
+// build paper and return unique pointer
 class PaperFactory : public RpcFactory
 {
 public:

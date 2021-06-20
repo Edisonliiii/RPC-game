@@ -4,6 +4,7 @@
 #include "scissor.h"
 #include "rpc_factory.h"
 
+// build scissor and return unique pointer
 class ScissorFactory : public RpcFactory
 {
 public:
