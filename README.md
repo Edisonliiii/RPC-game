@@ -1,4 +1,4 @@
-# IMC Technical Assessment
+# little RPC game
 
 Two files corresponding to two different assessments.
 
