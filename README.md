@@ -1,4 +1,4 @@
-# little RPC game
+# Little RPC game
 
 Two files corresponding to two different assessments.
 
